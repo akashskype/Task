@@ -1,0 +1,19 @@
+{% block title %}
+    <title>Assign Department</title>
+{% endblock %}
+
+
+<body>
+    {% block content %}
+    <h1>Assign Department</h1>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+              {{form.as_table}}
+        </table>
+        <br>
+        <button type="submit">Assign Department</button>
+    </form>
+    {% endblock %}
+</body>
+</html>

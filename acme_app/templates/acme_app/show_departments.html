@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+
+
+{% block title %}
+    <title>Show Department</title>
+{% endblock %}
+
+<body>
+    {% block content %}
+    <h1>Departments</h1>
+    <table border="2px">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Created_by</th>
+                <th>Created_at</th>
+                <th>Last Updated</th>
+                <th>Update</th>
+                <th>Delete</th>
+                <th>Assign Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dept in depts %}
+                <tr>
+                    <td>{{dept.id}}</td>
+                    <td>{{dept.name}}</td>
+                    <td>{{dept.description}}</td>
+                    <td>{{dept.created_by}}</td>
+                    <td>{{dept.created_at}}</td>
+                    <td>{{dept.last_updated_at}}</td>
+                    <td>
+                        <a href="{% url 'show-users' %}"><button class=" btn btn-outline-warning">Update</button></a>
+                    </td>
+                    <td>Delete</td>
+                    <td>Assign</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+</body>
+</html>

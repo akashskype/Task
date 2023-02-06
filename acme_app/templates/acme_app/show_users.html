@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+
+{% block title %}
+    <title>Show Users</title>
+{% endblock %}
+
+
+
+<body>
+    {% block content %}
+    <h1>Users</h1>
+    <table border="2px" class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Role</th>
+                <th>Update</th>
+                <th>Delete</th>
+                <th>Assign Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.department}}</td>
+                    <td>{{user.role}}</td>
+                    <td>Update</td>
+                    <td>
+                        <a href="{% url 'delete' user.id %}"><button class="btn-outline-danger">Delete</button></a>
+                    </td>
+                    <td><button type="button"><a href="{% url 'assign-department' user.id %}" style="text-decoration:none;">Assign Department</a></button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   }
+</body>
+{% endblock %}
+</html>

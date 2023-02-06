@@ -1,0 +1,8 @@
+
+.mynav{
+    background-color: aquamarine;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 8px;
+    padding: 0px;
+}
